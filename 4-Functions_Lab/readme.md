@@ -1,5 +1,23 @@
 # Serverless Event Streaming Hands-On Lab
 
+## Creating Azure Function from the CLI
+
+![Azure Function Diagram](images/create_function.png "Create Function Diagram")
+
+## Open Azure Cloud Shell
+
+Open cloud shell from Browser: https://shell.azure.com/bash
+
+Select the Cloud Shell button on the menu in upper-right corner of the Azure Portal
+![Cloud Shell Menu](images/cloud-shell-menu.png "Cloud Shell Menu")
+
+## Create a resource group
+'''bash
+    az group create --name myResourceGroup --location uksouth
+
+## Crate an Azure Storage Account
+
+
 ## Event Processing from Event Hub
 
 ![Event Hub Diagram](images/eventhub_diagram.png "Event Hub Diagram")
@@ -347,3 +365,8 @@ Now that we have an event hub let's create an instance of CosmosDB where we can 
 1. Now let's watch the live streaming in Application Insights
 
     ![app insights live stream](images/app_insight_blobevents.png "app insights live stream")
+
+
+
+## Function Proxies
+

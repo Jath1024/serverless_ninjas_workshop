@@ -1,8 +1,6 @@
 # Serverless Event Streaming Hands-On Lab
 
-## Creating Azure Function from the CLI
-
-![Azure Function Diagram](images/create_function.png "Create Function Diagram")
+## Create Azure Function from the CLI
 
 ## Open Azure Cloud Shell
 
@@ -11,11 +9,28 @@ Open cloud shell from Browser: https://shell.azure.com/bash
 Select the Cloud Shell button on the menu in upper-right corner of the Azure Portal
 ![Cloud Shell Menu](images/cloud-shell-menu.png "Cloud Shell Menu")
 
-## Create a resource group
-'''bash
+## Create a Resource Group
+    ```azurecli
     az group create --name myResourceGroup --location uksouth
+    ```
 
-## Crate an Azure Storage Account
+## Create an Azure Storage Account
+    ```azurecli
+    az storage account create --name <stoage_name> --location uksouth --resource-group myResourceGroup --sku Standard_LRS
+    ```
+
+## Create a Function App
+    '''azurecli
+    az functionapp create --deployment-source-url https://github.com/Azure-Samples/functions-quickstart  \
+    --resource-group myResourceGroup --consumption-plan-location westeurope \
+    --name <app_name> --storage-account  <storage_name>
+    ```
+
+## Test the Function
+
+Use cURL to test the deployed function on a Mac or Linux computer or using Bash on Windows. Execute the following cURL command, replacing the <app_name> placeholder with the name of your function app. Append the query string &name=<yourname> to the URL.
+If you don't have cURL available in your command line, enter the same URL in the address of your web browser. Again, replace the <app_name> placeholder with the name of your function app, and append the query string &name=<yourname> to the URL and execute the request.
+
 
 
 ## Event Processing from Event Hub

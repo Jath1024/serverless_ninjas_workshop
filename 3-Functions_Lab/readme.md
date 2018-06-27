@@ -54,7 +54,12 @@ Open a browser window and browse to <app_name>/azurewebsites.net
 
     ![Create](images/create.png "Create")
 
-1. Give it a name (which must be unique, try appending your initials), location, resource group, location, and scale then click create
+1. Give it a name, pricing tier, resource group, location, and scale then click create
+*Name: serverlessstream<your_initials>
+*Pricing: Standard 
+*Location: West Europe
+*ResourceGroup: serverlessstream
+*ThroughputUnits: 1
 
     ![Create Event Hub](images/create_event_hub.png "Create Event Hub")
 

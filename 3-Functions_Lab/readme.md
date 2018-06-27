@@ -100,7 +100,7 @@ First create an Event Hub Namespace that will contain our Event Hub.
 -->
 1. Click on the existing 'RootManageSharedAccessKey' policy and save the Primary Connection String and policy name somewhere as we will need this later
 
-    ![SAS Connection String](images/event_hub_connection_string.png "SAS Connection String")
+    ![SAS Connection String](images/event_hub_sas_properties_v2.png "SAS Connection String")
 
 ### Create CosmosDB
 

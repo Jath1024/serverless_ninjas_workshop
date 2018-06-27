@@ -88,7 +88,8 @@ First create an Event Hub Namespace that will contain our Event Hub.
 1. Once your event hub entity has been created click on it and then click Shared Access policies
 
     ![Shared Access policies](images/event_hub_sas.png "Shared Access policies")
-
+   
+<!--
 1. Click Add
 
     ![Add](images/add.png "Add")
@@ -96,8 +97,8 @@ First create an Event Hub Namespace that will contain our Event Hub.
 1. Give you policy a name, select the send right, and then click create
 
     ![SAS Settings](images/event_hub_sas_properties.png "SAS Settings")
-
-1. Click on the policy you just created and save the Primary Connection String and policy name somewhere as we will need this later
+-->
+1. Click on the existing 'RootManageSharedAccessKey' policy and save the Primary Connection String and policy name somewhere as we will need this later
 
     ![SAS Connection String](images/event_hub_connection_string.png "SAS Connection String")
 
@@ -188,7 +189,7 @@ Now that we have an event hub let's create an instance of CosmosDB where we can 
 
     ![Select Event Hub connection](images/select_event_hub_connection.png "Select Event Hub connection")
 
-1. Now enter the name of the Event Hub in the Event Hub Name field and then click Create
+1. Now enter the name of the Event Hub in the Event Hub Name field and then click Create (this should be Event Hub and not the name of the Event Hub Namespace)
 
     ![Finish New Function](images/finish_function_settings.png "Finish New Function")
 
@@ -218,7 +219,7 @@ Now that we have an event hub let's create an instance of CosmosDB where we can 
 
     ![function name](images/function_name.png "function name")
 
-1. Below is the code we will use to insert the events into Cosmos DB
+1. Copy and paste the code below into index.js. This will insert the events into Cosmos DB
 
     ```javascript
     module.exports = function (context, eventHubMessages) {
@@ -234,7 +235,7 @@ Now that we have an event hub let's create an instance of CosmosDB where we can 
         context.done();
     };
     ```
-
+<!--
     ```csharp
     #r "Newtonsoft.Json"
 
@@ -252,7 +253,7 @@ Now that we have an event hub let's create an instance of CosmosDB where we can 
         }
     }
     ```
-
+-->
 1. Now we can start using it. Click on the function app name
 
     ![function app](images/function_app.png "function app")

@@ -54,7 +54,7 @@ Open a browser window and browse to <app_name>/azurewebsites.net
 
     ![Create](images/create.png "Create")
 
-1. Give it a name, location, resource group, location, and scale then click create
+1. Give it a name (which must be unique, try appending your initials), location, resource group, location, and scale then click create
 
     ![Create Event Hub](images/create_event_hub.png "Create Event Hub")
 

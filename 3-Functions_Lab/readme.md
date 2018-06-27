@@ -28,9 +28,7 @@ Select the Cloud Shell button on the menu in upper-right corner of the Azure Por
 
 ## Test the Function
 
-Use cURL to test the deployed function on a Mac or Linux computer or using Bash on Windows. Execute the following cURL command, replacing the <app_name> placeholder with the name of your function app. Append the query string &name=<yourname> to the URL.
-If you don't have cURL available in your command line, enter the same URL in the address of your web browser. Again, replace the <app_name> placeholder with the name of your function app, and append the query string &name=<yourname> to the URL and execute the request.
-
+Open a browser window and browse to <app_name>/azurewebsites.net
 
 
 ## Event Processing from Event Hub

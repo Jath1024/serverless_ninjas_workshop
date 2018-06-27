@@ -36,6 +36,7 @@ Open a browser window and browse to <app_name>/azurewebsites.net
 ![Event Hub Diagram](images/eventhub_diagram.png "Event Hub Diagram")
 
 ### Create Event Hub
+First create an Event Hub Namespace that will contain our Event Hub.
 
 1. Browse to the azure portal [https://portal.azure.com](https://portal.azure.com)
 1. Click the New button
@@ -60,6 +61,7 @@ Open a browser window and browse to <app_name>/azurewebsites.net
 * Location: West Europe
 * ResourceGroup: serverlessstream
 * ThroughputUnits: 1
+* EnableAutoInflate: Off
 
     ![Create Event Hub](images/create_event_hub.png "Create Event Hub")
 
@@ -76,6 +78,10 @@ Open a browser window and browse to <app_name>/azurewebsites.net
     ![New Event Hub](images/new_event_hub.png "New Event Hub")
 
 1. Then we can give the event hub a name and leave the rest of the settings as the defaults and click create
+* Name: serverlessstream<your_initials>
+* PartitionCount: 2
+* MessageRetention: 1
+* Capture: Off
 
     ![New Event Hub Settings](images/new_event_hub_settings.png "New Event Hub Settings")
 
@@ -117,6 +123,13 @@ Now that we have an event hub let's create an instance of CosmosDB where we can 
     ![Create](images/create.png "Create")
 
 1. Now let's give it a name,  use SQL as the API (since this data is in JSON format already), and use the same existing Resource Group as our Event Hub just to keep everything organized. Then click "Create"
+* ID: serverlessdb<your_initials>
+* API: SQL
+* ResourceGroup: serverlessstream
+* Location: West Europe
+* Enable Geo-Redundancy: No
+* Multi-Master: No
+* Virtual Networks: Disabled
 
     ![Create Cosmos DB](images/create_cosmosdb.png "Create Cosmos DB")
 
@@ -127,7 +140,7 @@ Now that we have an event hub let's create an instance of CosmosDB where we can 
 
     ![New Button](images/new_button.png "New Button")
 
-1. Type "azure functions" into the search box and select Event Hub when it pops up
+1. Type "azure functions" into the search box and select Function App when it pops up
 
     ![Function App](images/function_search.png "Function App")
 
@@ -140,6 +153,14 @@ Now that we have an event hub let's create an instance of CosmosDB where we can 
     ![Create](images/create.png "Create")
 
 1. On the next screen select a unique name for your function app (confirm with checkmark), again let's use the same existing Resource Group as our Event Hub just to keep everything organized, keep consumption plan selected for the hosting plan, and make sure you choose "On" for Application Insights and then click "Create"
+* AppName: serverlessstreamfunction<your_initials>
+* ResourceGroup: serverlessstream
+* OS: Windows
+* HostingPlan: Consumption Plan
+* Location: West Europe
+* Storage: Create New > serverlessstreamsa
+* AppInsights: On
+* AppInsightsLocation: West Europe
 
     ![Create Cosmos DB](images/create_function.png "Create Cosmos DB")
 
